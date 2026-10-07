@@ -20,3 +20,6 @@ env/
 # ОС
 .DS_Store
 Thumbs.db
+
+# Временные файлы
+*.tmp
