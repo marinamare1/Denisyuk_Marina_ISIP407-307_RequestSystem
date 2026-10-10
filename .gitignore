@@ -12,8 +12,6 @@ env/
 .vscode/
 
 # Базы данных и секреты
-*.sqlite
-*.db
 .env
 *.log
 
