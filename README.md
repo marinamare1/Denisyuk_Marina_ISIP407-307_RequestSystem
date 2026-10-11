@@ -98,3 +98,22 @@ Endpoints
         ...
       }
     ]
+
+Деплой
+
+Локальный запуск в Docker
+
+1. Собрать образ: docker build -t request-system .
+
+2. Запустить контейнер: docker run -p 8000:8000 request-system
+
+3. Открыть: http://localhost:8000/docs
+
+Развёртывание на TimeWeb Cloud
+
+1. Создать облачный сервер TimeWeb Cloud (Ubuntu 22.04).
+2. Установить Docker и docker-compose: sudo apt update && sudo apt install docker.io docker-compose -y
+3. Склонировать репозиторий: git clone https://github.com/marinamare1/Denisyuk_Marina_ISIP407-307_RequestSystem.git
+4. Запустить контейнер: docker-compose up -d
+5. Проверить: http://IP_СЕРВЕРА:8000/health → {"status": "ok"}    
+
