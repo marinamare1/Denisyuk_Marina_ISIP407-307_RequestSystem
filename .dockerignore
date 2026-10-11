@@ -12,3 +12,6 @@ tests/
 docs/
 !docs/database/
 README.md
+.env
+.env.*
+.env.example
