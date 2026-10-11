@@ -8,8 +8,13 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY src/ ./src/
-COPY docs/database/ ./docs/database/
+RUN groupadd --system app && \
+    useradd --system --gid app --no-create-home app
+
+COPY --chown=app:app src/ ./src/
+COPY --chown=app:app docs/database/ ./docs/database/
+
+USER app
 
 EXPOSE 8000
 
