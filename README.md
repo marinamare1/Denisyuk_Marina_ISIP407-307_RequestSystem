@@ -58,3 +58,43 @@ cd Denisyuk_Marina_ISIP407-307_RequestSystem
 - 8 — фильтр по статусу;
 - 9 — удалить заявку;
 - 0 — выход.
+
+REST API
+
+Запуск
+
+    uvicorn src.main_api:app --reload
+
+Адрес API: http://localhost:8000
+
+Swagger-документация: http://localhost:8000/docs
+
+Endpoints
+
+| Метод |         Путь         |        Назначение        |
+|-------|----------------------|--------------------------|
+|  GET  |       /health        |      Проверка работы     |
+|  GET  |       /requests      |      Список заявок       |
+|  GET  |       /requests/{id} |      Заявка по id        |
+|  POST |       /requests      |      Создание заявки     |
+| PATCH |       /requests/{id} |      Изменение заявки    |
+| PATCH |/requests/{id}/status |      Смена статуса       |
+| DELETE|     /requests/{id}   |      Удаление заявки     |
+|  GET  |         /users       |     Список пользователей |
+|  GET  |      /statuses       |    Справочник статусов   |
+|  GET  |    /categories       |    Справочник категорий  |
+
+Пример запроса
+
+    curl http://localhost:8000/requests
+
+Ответ:
+    [
+      {
+        "id": 1,
+        "request_number": "REQ-2026-001",
+        "topic": "Не работает принтер",
+        "status_id": 2,
+        ...
+      }
+    ]
